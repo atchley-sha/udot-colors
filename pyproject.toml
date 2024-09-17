@@ -16,8 +16,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
 	"seaborn",
-	"ColorKit",
-	"pprint",
+	"ColorKit"
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
