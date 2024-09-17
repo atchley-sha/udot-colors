@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=42", "wheel", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+version_file = "src/udot_colors/_version.py"
+
+[project]
+name = "udot_colors"
+dynamic = ["version"]
+authors = [
+  { name="Hayden Atchley", email="hatchley@utah.gov" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+	"seaborn",
+	"ColorKit",
+	"pprint",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
