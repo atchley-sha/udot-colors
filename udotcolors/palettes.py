@@ -1,4 +1,4 @@
-from .udotcolors import get_color, get_color_list
+from .colors import get_color, get_color_list
 import seaborn as sns
 import ColorKit as ck
 import pprint

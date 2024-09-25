@@ -51,7 +51,7 @@ def get_color_category(*cols):
     return [_udot_colors_dict[c] for c in cols]
 
 
-def list_udot_colors(*cols):
+def list_colors(*cols):
     red_msg = "Only use red to highlight something strong or negative"
     if len(cols) < 1:
         pprint.pprint(red_msg)
