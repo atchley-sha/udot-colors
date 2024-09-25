@@ -3,10 +3,10 @@ requires = ["setuptools>=42", "wheel", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
-version_file = "src/udot_colors/_version.py"
+version_file = "udotcolors/_version.py"
 
 [project]
-name = "udot_colors"
+name = "udotcolors"
 dynamic = ["version"]
 authors = [
   { name="Hayden Atchley", email="hatchley@utah.gov" },
