@@ -1,4 +1,4 @@
-from udot_colors import get_color
+from .colors import get_color, get_color_list
 import seaborn as sns
 import ColorKit as ck
 import pprint
@@ -32,7 +32,7 @@ def palette_div(neg="red", pos="dark_blue", center="light", s=75, l=50, sep=1):
 
 def _palette_gen(palette="main", list_palette=False):
     palettes = {
-        "main": get_color(
+        "main": get_color_list(
             "light_blue",
             "orange",
             "dark_blue",
@@ -44,15 +44,15 @@ def _palette_gen(palette="main", list_palette=False):
             "tacao",
             "brown",
         ),
-        "alt": get_color(),
-        "grayscale": get_color(),
-        "highlight": get_color(),
+        "alt": get_color_list(),
+        "grayscale": get_color_list(),
+        "highlight": get_color_list(),
     }
 
-    if palette == "all":
-        palettes["all"] = palettes
-
     if list_palette:
+        if palette == "all":
+            pprint.pprint(palettes)
+            return None
         pprint.pprint(palettes[palette])
         return None
 
