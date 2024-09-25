@@ -1,38 +1,49 @@
 import pprint
 
+_primary = {
+    "light_blue": "#5A87C6",
+    "orange": "#E86924",
+    "dark_blue": "#0B2444",
+}
+_secondary = {
+    "light_green": "#ABC746",
+    "mustard": "#F5A31B",
+    "medium_blue": "#09549C",
+    "tan": "#C7A25A",
+    "turquoise": "#55CCD4",
+    "red": "#E8261A",  # Only use to highlight something strong or negative
+}
+_tertiary = {
+    "red_rock": "#C7776D",
+    "brown": "#7A5B1F",
+    "tacao": "#F7AA74",
+    "purple": "#8A52A1",
+    "dark_green": "#6B7A31",
+    "yellow": "#DED843",
+}
+_grays = {
+    "black": "#000000",
+    "dark_gray": "#454545",
+    "gray": "#888888",
+    "light_gray": "#EEEEEE",
+    "white": "#FFFFFF",
+}
+
 _udot_colors_dict = {
-    "primary": {
-        "light_blue": "#5A87C6",
-        "orange": "#E86924",
-        "dark_blue": "#0B2444",
-    },
-    "secondary": {
-        "light_green": "#ABC746",
-        "mustard": "#F5A31B",
-        "medium_blue": "#09549C",
-        "tan": "#C7A25A",
-        "turquoise": "#55CCD4",
-        "red": "#E8261A",  # Only use to highlight something strong or negative
-    },
-    "tertiary": {
-        "red_rock": "#C7776D",
-        "brown": "#7A5B1F",
-        "tacao": "#F7AA74",
-        "purple": "#8A52A1",
-        "dark_green": "#6B7A31",
-        "yellow": "#DED843",
-    },
-    "grays": {
-        "dark_gray": "#454545",
-        "gray": "#888888",
-        "light_gray": "#EEEEEE",
-        "white": "#FFFFFF",
-    },
+    "primary": _primary,
+    "secondary": _secondary,
+    "tertiary": _tertiary,
+    "grays": _grays,
 }
 
 
-def get_color(*cols):
-    all_colors = {_udot_colors_dict[c] for c in _udot_colors_dict.keys()}
+def get_color(col):
+    all_colors = _primary | _secondary | _tertiary | _grays
+    return all_colors[col]
+
+
+def get_color_list(*cols):
+    all_colors = _primary | _secondary | _tertiary | _grays
     return [all_colors[c] for c in cols]
 
 
