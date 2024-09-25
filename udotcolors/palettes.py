@@ -49,10 +49,10 @@ def _palette_gen(palette="main", list_palette=False):
         "highlight": get_color_list(),
     }
 
-    if palette == "all":
-        palettes["all"] = palettes
-
     if list_palette:
+        if palette == "all":
+            pprint.pprint(palettes)
+            return None
         pprint.pprint(palettes[palette])
         return None
 
