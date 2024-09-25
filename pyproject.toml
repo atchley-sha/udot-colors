@@ -11,9 +11,9 @@ dynamic = ["version"]
 authors = [
   { name="Hayden Atchley", email="hatchley@utah.gov" },
 ]
-description = "A small example package"
+description = "Colors and palettes for Seaborn that conform to the UDOT style guide"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = [
 	"seaborn",
 	"ColorKit"
@@ -25,5 +25,5 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/pypa/sampleproject"
-Issues = "https://github.com/pypa/sampleproject/issues"
+Homepage = "https://github.com/atchley-sha/udot-colors-seaborn"
+Issues = "https://github.com/atchley-sha/udot-colors-seaborn/issues"
