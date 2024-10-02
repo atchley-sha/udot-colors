@@ -11,17 +11,22 @@ dynamic = ["version"]
 authors = [
   { name="Hayden Atchley", email="hatchley@utah.gov" },
 ]
-description = "Colors and palettes for Seaborn that conform to the UDOT style guide"
+description = "Colors and palettes for varios Python plotting packages that conform to the UDOT style guide"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = [
-	"seaborn",
-	"ColorKit"
-]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+seaborn = [
+	"ColorKit",
+	"seaborn",
+]
+plotnine = [
+	"plotnine",
 ]
 
 [project.urls]
