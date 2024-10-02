@@ -73,3 +73,39 @@ def _sanitize_color_name(col: str) -> str:
     col = "mediumblue" if col == "blue" else col
     col = "darkgreen" if col == "green" else col
     return col
+
+
+#############
+
+_palettes = {
+    "main": get_color_list(
+        "light_blue",
+        "orange",
+        "dark_blue",
+        "gray",
+        "medium_blue",
+        "light_green",
+        "dark_gray",
+        "turquoise",
+        "tacao",
+        "brown",
+    ),
+    "alt": get_color_list(),
+    "grayscale": get_color_list(),
+    "highlight": get_color_list(),
+}
+
+
+def get_palette(palette="main"):
+    palette = _sanitize_palette_name(palette)
+    return _palettes[palette]
+
+
+def list_palettes():
+    pprint.pprint(_palettes)
+    return None
+
+
+def _sanitize_palette_name(pal: str) -> str:
+    pal = pal.lower().replace("grey", "gray").replace("_", "")
+    return pal
