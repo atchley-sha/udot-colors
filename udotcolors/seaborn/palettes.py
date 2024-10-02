@@ -1,4 +1,4 @@
-from .colors import get_color, get_color_list
+from ..colors import get_color, _palettes
 import seaborn as sns
 import ColorKit as ck
 import pprint
@@ -31,23 +31,7 @@ def palette_div(neg="red", pos="dark_blue", center="light", s=75, l=50, sep=1):
 
 
 def _palette_gen(palette="main", list_palette=False):
-    palettes = {
-        "main": get_color_list(
-            "light_blue",
-            "orange",
-            "dark_blue",
-            "gray",
-            "medium_blue",
-            "light_green",
-            "dark_gray",
-            "turquoise",
-            "tacao",
-            "brown",
-        ),
-        "alt": get_color_list(),
-        "grayscale": get_color_list(),
-        "highlight": get_color_list(),
-    }
+    palettes = _palettes
 
     if list_palette:
         if palette == "all":
