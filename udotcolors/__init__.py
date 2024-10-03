@@ -1,5 +1,4 @@
 __all__ = ["colors", "palettes"]
 
-from . import colors, palettes
 from .colors import get_color, get_color_list, list_colors
-from .palettes import palette, palette_seq, palette_div, list_palettes
+from .palettes import list_palettes, get_palette_qual, get_palette_seq, get_palette_div
