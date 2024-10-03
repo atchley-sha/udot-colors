@@ -1,5 +1,5 @@
 import plotnine
-from .palettes import _palette_gen, _palette_gen_seq
+from .palettes import _palette_gen, _palette_gen_seq, _palette_gen_div
 
 ## Discrete scales ####
 
@@ -52,22 +52,66 @@ def scale_fill_udot_seq(
     reverse=False,
     **kwargs,
 ):
-    pal = _palette_gen_seq(palette=palette, colorlist=colorlist, reverse=reverse)
-    scale = plotnine.scale_fill_gradientn(
-        colors=pal()([x / 256 for x in range(257)]),
+    colordict = _palette_gen_seq(palette=palette, colorlist=colorlist, reverse=reverse)
+    scale = scale = plotnine.scale_fill_gradientn(
+        colors=colordict["colors"], values=colordict["values"], **kwargs
+    )
+    return scale
+
+
+def scale_color_udot_seq(
+    palette=None,
+    colorlist=None,
+    reverse=False,
+    **kwargs,
+):
+    colordict = _palette_gen_seq(palette=palette, colorlist=colorlist, reverse=reverse)
+    scale = scale = plotnine.scale_color_gradientn(
+        colors=colordict["colors"], values=colordict["values"], **kwargs
+    )
+    return scale
+
+
+scale_colour_udot_seq = scale_color_udot_seq
+
+
+## Diverging scales
+
+
+def scale_fill_udot_div(
+    palette=None,
+    colors=None,
+    midpoint=0,
+    reverse=False,
+    **kwargs,
+):
+    colordict = _palette_gen_div(palette=palette, colors=colors, reverse=reverse)
+    scale = scale = plotnine.scale_fill_gradient2(
+        low=colordict["low"],
+        mid=colordict["mid"],
+        high=colordict["high"],
+        midpoint=midpoint,
         **kwargs,
     )
     return scale
 
 
-# def scale_color_udot_seq()
+def scale_color_udot_div(
+    palette=None,
+    colors=None,
+    midpoint=0,
+    reverse=False,
+    **kwargs,
+):
+    colordict = _palette_gen_div(palette=palette, colors=colors, reverse=reverse)
+    scale = scale = plotnine.scale_color_gradient2(
+        low=colordict["low"],
+        mid=colordict["mid"],
+        high=colordict["high"],
+        midpoint=midpoint,
+        **kwargs,
+    )
+    return scale
 
-# scale_colour_udot_seq = scale_color_udot_seq
 
-
-## Diverging scales
-
-# def scale_fill_udot_div()
-# def scale_color_udot_div()
-
-# scale_colour_udot_div = scale_color_udot_div
+scale_colour_udot_div = scale_color_udot_div
