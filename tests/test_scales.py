@@ -33,3 +33,10 @@ mtcars2 = mtcars.assign(gear=[str(x) for x in mtcars.gear])
     + geom_col()
     + scale_fill_udot_div(colors=["blue", "orange"], midpoint=4)
 )
+
+# %%
+(
+    ggplot(mtcars, aes(x="cyl", y="mpg", fill="gear"))
+    + geom_col()
+    + scale_fill_udot_seq("blue", reverse=True)
+)
