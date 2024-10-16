@@ -61,6 +61,10 @@ def _palette_gen_seq(palette=None, colorlist=None, reverse=False):
             raise ValueError("Specify one of `palette` or `colorlist`")
         else:
             colorlist = get_palette_seq(palette)
+            if reverse:
+                colorlist.reverse()
+            colordict = {"colors": colorlist, "values": None}
+            return colordict
 
     if reverse:
         colorlist.reverse()

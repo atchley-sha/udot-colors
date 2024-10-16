@@ -53,7 +53,7 @@ def scale_fill_udot_seq(
     **kwargs,
 ):
     colordict = _palette_gen_seq(palette=palette, colorlist=colorlist, reverse=reverse)
-    scale = scale = plotnine.scale_fill_gradientn(
+    scale = plotnine.scale_fill_gradientn(
         colors=colordict["colors"], values=colordict["values"], **kwargs
     )
     return scale
@@ -66,7 +66,7 @@ def scale_color_udot_seq(
     **kwargs,
 ):
     colordict = _palette_gen_seq(palette=palette, colorlist=colorlist, reverse=reverse)
-    scale = scale = plotnine.scale_color_gradientn(
+    scale = plotnine.scale_color_gradientn(
         colors=colordict["colors"], values=colordict["values"], **kwargs
     )
     return scale
@@ -86,7 +86,7 @@ def scale_fill_udot_div(
     **kwargs,
 ):
     colordict = _palette_gen_div(palette=palette, colors=colors, reverse=reverse)
-    scale = scale = plotnine.scale_fill_gradient2(
+    scale = plotnine.scale_fill_gradient2(
         low=colordict["low"],
         mid=colordict["mid"],
         high=colordict["high"],
@@ -104,7 +104,7 @@ def scale_color_udot_div(
     **kwargs,
 ):
     colordict = _palette_gen_div(palette=palette, colors=colors, reverse=reverse)
-    scale = scale = plotnine.scale_color_gradient2(
+    scale = plotnine.scale_color_gradient2(
         low=colordict["low"],
         mid=colordict["mid"],
         high=colordict["high"],
